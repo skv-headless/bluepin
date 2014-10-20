@@ -4,12 +4,18 @@
 
 <body>
   {{> loginButtons}}
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  <br/>
+  {{> layout}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="layout">
+  {{#each images}}
+    <img class="thumbnail" src="{{src}}" width="100px;"/>
+  {{/each}}
+  <form>
+    <input id="fileinput" type="file"/>
+    <button type="submit">Upload</button>
+  </form>
 </template>
+
